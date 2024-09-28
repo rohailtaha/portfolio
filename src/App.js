@@ -5,7 +5,7 @@ import Age from './Age';
 function App() {
   return (
     <div>
-      <h1>What nice.</h1>
+      <h1>What nice </h1>
       <Name />
       <Age />
     </div>

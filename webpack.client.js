@@ -5,7 +5,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  mode: isDevelopment ? 'development' : 'production', // Set mode dynamically
+  mode: isDevelopment ? 'development' : 'production',
   entry: isDevelopment ? './src/client-dev.js' : './src/client.js',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -25,7 +25,6 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            // plugins: [isDevelopment && 'react-refresh/babel'].filter(Boolean),
             configFile: path.resolve(__dirname, 'babel.client.js'),
           },
         },
