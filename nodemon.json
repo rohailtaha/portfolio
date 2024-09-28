@@ -1,0 +1,4 @@
+{
+  "watch": ["src/server.js", "src/**/*.js"],
+  "ignore": ["src/client.js", "build/", "webpack/"]
+}

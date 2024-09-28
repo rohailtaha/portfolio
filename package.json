@@ -1,0 +1,48 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:client": "cross-env NODE_ENV=production webpack --config webpack.client.js",
+    "build:server": "cross-env NODE_ENV=production webpack --config webpack.server.js",
+    "build": "npm run build:client",
+    "start": "npx babel-node --config-file ./babel.server.js server.js",
+    "dev": "cross-env NODE_ENV=development webpack serve --config webpack.client.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-runtime": "^7.25.4",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
+    "concurrently": "^9.0.1",
+    "css-loader": "^7.1.2",
+    "express": "^4.21.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.1",
+    "nodemon": "^3.1.7",
+    "postcss": "^8.4.47",
+    "postcss-loader": "^8.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.13",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.25.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
+    "cross-env": "^7.0.3",
+    "react-refresh": "^0.14.2",
+    "webpack-dev-middleware": "^7.4.2",
+    "webpack-dev-server": "^5.1.0",
+    "webpack-hot-middleware": "^2.26.1"
+  }
+}
