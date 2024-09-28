@@ -1,9 +1,11 @@
+import 'ignore-styles';
+
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import App from './src/App';
 import path from 'path';
 import fs from 'fs';
+import App from './src/pages/home/App';
 
 const app = express();
 

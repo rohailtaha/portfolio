@@ -13,6 +13,9 @@ module.exports = {
     publicPath: '/',
   },
   devServer: {
+    // static: {
+    //   directory: path.resolve(__dirname, 'build'),
+    // },
     hot: true,
     historyApiFallback: true,
     port: 3000,
@@ -38,6 +41,10 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     isDevelopment && new ReactRefreshWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'globals.css',
+    }),
   ].filter(Boolean),
+
   devtool: isDevelopment ? 'inline-source-map' : 'source-map',
 };
