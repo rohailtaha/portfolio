@@ -13,9 +13,9 @@ module.exports = {
     publicPath: '/',
   },
   devServer: {
-    // static: {
-    //   directory: path.resolve(__dirname, 'build'),
-    // },
+    static: {
+      directory: path.resolve(__dirname, 'public'),
+    },
     hot: true,
     historyApiFallback: true,
     port: 3000,
