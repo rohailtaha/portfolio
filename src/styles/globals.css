@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  body {
+    font-family: 'Inter', system-ui;
+    @apply text-text-secondary;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-text-primary;
+  }
+  input,
+  textarea {
+    @apply text-text-primary;
+  }
+  .flex-cc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .flex-c {
+    display: flex;
+    align-items: center;
+  }
+  .flex-b {
+    display: flex;
+    justify-content: space-between;
+  }
+  .flex-cb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .max-content-w {
+    @apply max-w-4xl;
+  }
+  .responsive-pad {
+    @apply px-6 xs:px-8 sm:px-12 lg:px-16;
+  }
+}
