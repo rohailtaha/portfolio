@@ -2,6 +2,10 @@ import React from 'react';
 import '../../styles/globals.css';
 import { HEADER_HEIGHT } from '../../utils/constants';
 import SectionHeading from '../../components/SectionHeading';
+import ContactSection from '../../components/ContactSection';
+import Footer from '../../components/Footer';
+import ArrowRightIcon from '../../components/icons/ArrowRightIcon';
+import Header from '../../components/Header';
 
 const PROJECTS = [
   {
@@ -85,26 +89,16 @@ const SKILLS = {
 function App() {
   return (
     <div>
-      <header className="fixed w-full py-6 bg-white responsive-pad">
-        <nav className="mx-auto font-medium max-content-w flex-c gap-x-16 text-text-primary">
-          <a href="/" className="text-lg font-bold text-primary">
-            Rohail Taha
-          </a>
-          <div className="flex-c gap-x-8">
-            <a href="/">Work</a>
-            <a href="/">About</a>
-            <a href="/">Contact</a>
-          </div>
-        </nav>
-      </header>
+      <Header />
       <main style={{ paddingTop: HEADER_HEIGHT }} className="responsive-pad">
-        <section className="py-16 mx-auto max-content-w">
-          <div className="max-w-xl">
+        <section className="pt-24 pb-16 mx-auto max-content-w">
+          <div className="max-w-2xl">
             <h1 className="text-4xl font-bold">
-              Creating functional software for various ambitious purposes.
+              Building Robust Software Solutions that Enhance User Experience
             </h1>
             <p className="mt-5 text-xl">
-              I&apos;m a fullstack web developer located in Pakistan.
+              I&apos;m a fullstack web developer with 2.5+ years of professional
+              experience.
             </p>
           </div>
         </section>
@@ -114,9 +108,10 @@ function App() {
             <div>
               <a
                 href="/work"
-                className="px-4 py-2 font-medium border-2 rounded-full border-text-primary text-text-primary"
+                className="px-4 py-2 font-medium border-2 rounded-full flex-c gap-x-2 border-text-primary text-text-primary"
               >
                 <span className="text-sm"> Show all projects</span>
+                <ArrowRightIcon />
               </a>
             </div>
           </div>
@@ -149,7 +144,7 @@ function App() {
             <div>
               <div className="space-y-3 text-text-primary">
                 <p>
-                  For the past few years, I've been working with various
+                  For the past few years, I&apos;ve been working with various
                   startups, companies, and agencies.
                 </p>
                 <p>
@@ -157,9 +152,9 @@ function App() {
                   digital products while leveraging the latest technologies.
                 </p>
                 <p>
-                  In my free time, you'll usually find me building side projects
-                  and tackling frontend challenges to enhance my web development
-                  skills.
+                  In my free time, you&apos;ll usually find me building side
+                  projects and tackling frontend challenges to enhance my web
+                  development skills.
                 </p>
               </div>
               <a
@@ -250,7 +245,9 @@ function App() {
             </div>
           </div>
         </section>
+        <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 }

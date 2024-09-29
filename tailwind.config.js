@@ -6,6 +6,7 @@ module.exports = {
         primary: '#6500B4',
         'text-primary': '#000000',
         'text-secondary': '#606060',
+        'text-muted': '#757575',
       },
       screens: {
         xs: '420px',
