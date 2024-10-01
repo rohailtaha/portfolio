@@ -6,10 +6,20 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
-  entry: isDevelopment ? './src/client-dev.js' : './src/client.js',
+  entry: isDevelopment
+    ? {
+        index: './src/client-dev.js',
+        'single-work': './src/pages/single-work/render.js',
+        'work': './src/pages/work/render.js',
+      }
+    : {
+        index: './src/client.js',
+        'single-work': './src/pages/single-work/hydrate.js',
+        'work': './src/pages/work/hydrate.js',
+      },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: '/',
   },
   devServer: {
@@ -17,8 +27,13 @@ module.exports = {
       directory: path.resolve(__dirname, 'public'),
     },
     hot: true,
-    historyApiFallback: true,
-    port: 3000,
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/work$/, to: '/work.html' },
+        { from: /^\/work\/.*$/, to: '/single-work.html' }, // Serve single-work.html for dynamic URLs
+      ],
+    },
+    port: 3500,
   },
   module: {
     rules: [

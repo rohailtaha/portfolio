@@ -4,7 +4,7 @@ import { GithubIcon, LinkedInIcon } from './icons';
 
 function Footer() {
   return (
-    <footer className="py-4 mt-4 responsive-pad text-text-muted">
+    <footer className="pt-4 pb-8 mt-4 responsive-pad text-text-muted">
       <div className="mx-auto max-content-w flex-cb">
         <ul className="text-sm flex-c gap-x-10">
           <li>2024 © Rohail Taha</li>
