@@ -1,34 +1,22 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import '../../styles/globals.css';
-import { HEADER_HEIGHT } from '../../utils/constants';
+import { HEADER_HEIGHT, PROJECTS } from '../../utils/constants';
 import SectionHeading from '../../components/SectionHeading';
-import ContactSection from '../../components/ContactSection';
 import Footer from '../../components/Footer';
 import ArrowRightIcon from '../../components/icons/ArrowRightIcon';
 import Header from '../../components/Header';
-
-const PROJECTS = [
-  {
-    name: 'Startup, Inc',
-    skills: ['Next.js', 'TailwindCSS', 'MongoDB'],
-    year: 2023,
-  },
-  {
-    name: 'Startup, Inc',
-    skills: ['Next.js', 'TailwindCSS', 'MongoDB'],
-    year: 2023,
-  },
-  {
-    name: 'Startup, Inc',
-    skills: ['Next.js', 'TailwindCSS', 'MongoDB'],
-    year: 2023,
-  },
-  {
-    name: 'Startup, Inc',
-    skills: ['Next.js', 'TailwindCSS', 'MongoDB'],
-    year: 2023,
-  },
-];
+import { DotIcon } from '../../components/icons';
+import ArrowDownIcon from '../../components/icons/ArrowDownIcon';
+import {
+  CODESANDBOX_PROFILE_LINK,
+  GITHUB_PROFILE_LINK,
+  LINKEDIN_PROFILE_LINK,
+} from '../../utils/constants';
+import {
+  CodeSandboxIcon,
+  GithubIcon,
+  LinkedInIcon,
+} from '../../components/icons';
 
 const EXPERIENCES = [
   {
@@ -91,18 +79,37 @@ function App() {
     <div>
       <Header />
       <main style={{ paddingTop: HEADER_HEIGHT }} className="responsive-pad">
-        <section className="pt-24 pb-16 mx-auto max-content-w">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl font-bold">
-              Building Robust Software Solutions that Enhance User Experience
-            </h1>
-            <p className="mt-5 text-xl">
-              I&apos;m a fullstack web developer with 2.5+ years of professional
-              experience.
-            </p>
+        <section className="pt-32 pb-32 mx-auto max-content-w">
+          <div className="grid items-center grid-cols-[1fr,auto] grow">
+            <div>
+              <h1 className="text-6xl font-bold">
+                Hi, I&apos;m <br></br>
+                <span className="text-primary"> Rohail Taha </span>
+              </h1>
+              <p className="mt-5 text-xl">
+                A Full Stack Developer Crafting Elegant Solutions for the Web.
+              </p>
+            </div>
+            <ul className="mt-8 space-y-4 justify-self-end">
+              <li>
+                <a href={GITHUB_PROFILE_LINK}>
+                  <GithubIcon width="1.75rem" height="1.75rem" />
+                </a>
+              </li>
+              <li>
+                <a href={LINKEDIN_PROFILE_LINK}>
+                  <LinkedInIcon width="1.75rem" height="1.75rem" />
+                </a>
+              </li>
+              <li>
+                <a href={CODESANDBOX_PROFILE_LINK}>
+                  <CodeSandboxIcon width="1.75rem" height="1.75rem" />
+                </a>
+              </li>
+            </ul>
           </div>
         </section>
-        <section className="py-16 mx-auto max-content-w">
+        <section id="work" className="pt-16 mx-auto max-content-w">
           <div className="flex-cb">
             <SectionHeading>Selected Work</SectionHeading>
             <div>
@@ -116,53 +123,78 @@ function App() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-x-7 gap-y-9 mt-7">
-            {PROJECTS.map(project => {
-              return (
-                <div className="space-y-4" key={project.name}>
-                  <div className="bg-primary rounded-xl h-[230px]"></div>
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold">{project.name}</h3>
-                    <div className="text-sm flex-cb">
-                      <ul className="flex-c gap-x-2">
-                        {project.skills.map(skill => (
-                          <li key={skill}>{skill}</li>
-                        ))}
-                      </ul>
-                      <span className="px-2 py-0.5 font-medium bg-purple-300 rounded-full text-primary">
-                        {project.year}
-                      </span>
+            {Object.keys(PROJECTS)
+              .slice(0, 4)
+              .map(projectSlug => {
+                const project = PROJECTS[projectSlug];
+                return (
+                  <div className="space-y-4" key={projectSlug}>
+                    <a
+                      href={`/work/${projectSlug}`}
+                      className="bg-primary rounded-xl h-[230px] block"
+                    ></a>
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-semibold">{project.name}</h3>
+                      <div className="text-sm flex-cb">
+                        <ul className="flex-c gap-x-[3px]">
+                          {project.skills.slice(0, 3).map((skill, index) => {
+                            const isLastItem =
+                              index === project.skills.length - 1 ||
+                              index === 2;
+                            return (
+                              <Fragment key={skill}>
+                                <li>{skill}</li>
+                                {!isLastItem && (
+                                  <li>
+                                    <DotIcon />
+                                  </li>
+                                )}
+                              </Fragment>
+                            );
+                          })}
+                        </ul>
+                        <span className="px-2 py-0.5 font-medium bg-purple-300 rounded-full text-primary">
+                          {'2023'}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </section>
-        <section className="py-16 mx-auto max-content-w">
+        <section id="about" className="pt-32 mx-auto max-content-w">
           <SectionHeading>Bio</SectionHeading>
-          <div className="grid justify-between grid-cols-[1.2fr_1fr] mt-7 gap-x-24">
+          <div className="grid justify-between grid-cols-[1.4fr_1fr] mt-7 gap-x-24">
             <div>
               <div className="space-y-3 text-text-primary">
                 <p>
-                  For the past few years, I&apos;ve been working with various
-                  startups, companies, and agencies.
+                  I am a Full Stack Developer with over 2.5 years of experience
+                  creating user-friendly applications. I have a strong
+                  understanding of software development best practices. I love
+                  collaborating with individuals to create fantastic digital
+                  products.
                 </p>
                 <p>
-                  I love collaborating with individuals to create fantastic
-                  digital products while leveraging the latest technologies.
+                  My background in Computer Science, helps me understand and
+                  solve complex problems. In addition to my development
+                  expertise, I have hands-on team management experience, having
+                  led multiple projects and mentored junior developers.
                 </p>
                 <p>
                   In my free time, you&apos;ll usually find me building side
-                  projects and tackling frontend challenges to enhance my web
-                  development skills.
+                  projects and learning new topics to enhance my engineering
+                  skills.
                 </p>
               </div>
               <a
                 href="/"
-                className="inline-block px-5 py-3 font-semibold text-white rounded-full mt-7 bg-primary"
+                className="inline-flex items-center px-5 py-3 font-semibold text-white rounded-full gap-x-2 mt-7 bg-primary"
               >
                 <span>Download my resume</span>
-                <span></span>{' '}
+                <span className="block w-[24px] h-[24px] bg-white rounded-full flex-cc text-primary">
+                  <ArrowDownIcon />
+                </span>{' '}
               </a>
             </div>
             <div>
@@ -176,7 +208,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="py-16 mx-auto max-content-w">
+        <section className="pt-32 mx-auto max-content-w">
           <div className="grid lg:grid-cols-2 gap-x-16 gap-y-10">
             <div>
               <SectionHeading>Work Experience</SectionHeading>
@@ -216,7 +248,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="py-16 mx-auto max-content-w">
+        <section className="pt-16 pb-32 mx-auto max-content-w">
           <SectionHeading>Tech Stack</SectionHeading>
           <div className="grid grid-cols-3 font-medium gap-x-16 mt-7 text-text-primary">
             <div>
@@ -245,7 +277,6 @@ function App() {
             </div>
           </div>
         </section>
-        <ContactSection />
       </main>
       <Footer />
     </div>
