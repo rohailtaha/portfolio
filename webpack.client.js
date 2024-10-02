@@ -11,11 +11,13 @@ module.exports = {
         index: './src/client-dev.js',
         'single-work': './src/pages/single-work/render.js',
         'work': './src/pages/work/render.js',
+        'contact': './src/pages/contact/render.js',
       }
     : {
         index: './src/client.js',
         'single-work': './src/pages/single-work/hydrate.js',
         'work': './src/pages/work/hydrate.js',
+        'contact': './src/pages/contact/hydrate.js',
       },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -31,9 +33,13 @@ module.exports = {
       rewrites: [
         { from: /^\/work$/, to: '/work.html' },
         { from: /^\/work\/.*$/, to: '/single-work.html' }, // Serve single-work.html for dynamic URLs
+        { from: /^\/contact$/, to: '/contact.html' },
       ],
     },
     port: 3500,
+    client: {
+      logging: 'verbose', // Enable verbose logging
+    },
   },
   module: {
     rules: [

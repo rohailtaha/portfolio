@@ -74,7 +74,7 @@ function ContactForm() {
       </div>
       <button
         type="submit"
-        className="px-5 py-3 text-white rounded-full bg-primary"
+        className="px-5 py-3 font-semibold text-white rounded-full bg-primary"
       >
         Send Message
       </button>

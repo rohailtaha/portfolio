@@ -1,37 +1,27 @@
-import React from 'react';
+import React, { Fragment, useMemo } from 'react';
 import { HEADER_HEIGHT } from '../../utils/constants';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import SectionHeading from '../../components/SectionHeading';
 import { DotIcon } from '../../components/icons/DotIcon';
 import { TickIcon } from '../../components/icons';
+import BreadCrumbs from '../../components/BreadCrumbs';
 
 function SingleWork({ project }) {
-  console.log(project);
+  const breadCrumbLinks = useMemo(() => {
+    return [
+      { href: '/', name: 'Home' },
+      { href: '/work', name: 'Work' },
+      { href: window.location.href, name: project.name },
+    ];
+  }, [project.name]);
+
   return (
     <div>
       <Header />
       <main style={{ paddingTop: HEADER_HEIGHT }} className="responsive-pad">
         <div className="pt-10 pb-16 mx-auto max-content-w">
-          <ul className="flex-c gap-x-3">
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <span>/</span>
-            </li>
-            <li>
-              <a href="/work">Work</a>
-            </li>
-            <li>
-              <span>/</span>
-            </li>
-            <li className="font-bold underline">
-              <a className="underline" href={window.location.href}>
-                {project.name}
-              </a>
-            </li>
-          </ul>
+          <BreadCrumbs links={breadCrumbLinks} />
           <section className="mt-10">
             <div className="mt-8">
               {/* <img className="h-[454px] bg-primary rounded-xl" /> */}
@@ -45,18 +35,18 @@ function SingleWork({ project }) {
             </div>
             <div className="mt-6 text-sm">
               <h2 className="font-medium">Tech Stack</h2>
-              <ul className="mt-2 flex-c">
+              <ul className="mt-2 flex-c gap-x-1">
                 {project.skills.map((skill, index) => {
                   const isLastItem = index === project.skills.length - 1;
                   return (
-                    <>
-                      <li key={skill}>{skill}</li>
+                    <Fragment key={skill}>
+                      <li>{skill}</li>
                       {!isLastItem && (
                         <li key={skill}>
                           <DotIcon />
                         </li>
                       )}
-                    </>
+                    </Fragment>
                   );
                 })}
               </ul>

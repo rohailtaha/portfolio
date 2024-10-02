@@ -4,3 +4,7 @@ export * from './ArrowRightIcon';
 export * from './DotIcon';
 export * from './TickIcon';
 export * from './ChatIcon';
+export * from './CodeSandboxIcon';
+export * from './FrontendMentorIcon';
+export * from './CodePenIcon';
+export * from './ArrowDownIcon';

@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { HEADER_HEIGHT, PROJECTS } from '../../utils/constants';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { DotIcon } from '../../components/icons';
+import BreadCrumbs from '../../components/BreadCrumbs';
+
+const breadCrumbLinks = [
+  { href: '/', name: 'Home' },
+  { href: '/work', name: 'Work' },
+];
 
 function Work() {
   return (
@@ -10,42 +16,35 @@ function Work() {
       <Header />
       <main style={{ paddingTop: HEADER_HEIGHT }} className="responsive-pad">
         <div className="pt-10 pb-20 mx-auto max-content-w">
-          <ul className="flex-c gap-x-3">
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <span>/</span>
-            </li>
-            <li className="font-bold underline">
-              <a className="underline" href="/work">
-                Work
-              </a>
-            </li>
-          </ul>
+          <BreadCrumbs links={breadCrumbLinks} />
           <section className="mt-10">
             <h1 className="text-3xl font-bold">Work</h1>
             <div className="grid grid-cols-2 gap-x-7 gap-y-9 mt-7">
-              {Object.keys(PROJECTS).map(projectName => {
-                const project = PROJECTS[projectName];
+              {Object.keys(PROJECTS).map(projectSlug => {
+                const project = PROJECTS[projectSlug];
                 return (
                   <div className="space-y-4" key={project.name}>
-                    <div className="bg-primary rounded-xl h-[230px]"></div>
+                    <a
+                      href={`/work/${projectSlug}`}
+                      className="bg-primary rounded-xl h-[230px] block"
+                    ></a>
                     <div className="space-y-2">
                       <h3 className="text-lg font-semibold">{project.name}</h3>
                       <div className="text-sm flex-cb">
-                        <ul className="flex-c">
+                        <ul className="flex-c gap-x-[3px]">
                           {project.skills.slice(0, 3).map((skill, index) => {
-                            const isLastItem = index === 2;
+                            const isLastItem =
+                              index === project.skills.length - 1 ||
+                              index === 2;
                             return (
-                              <>
-                                <li key={skill}>{skill}</li>
+                              <Fragment key={skill}>
+                                <li>{skill}</li>
                                 {!isLastItem && (
-                                  <li key={skill}>
+                                  <li>
                                     <DotIcon />
                                   </li>
                                 )}
-                              </>
+                              </Fragment>
                             );
                           })}
                         </ul>
