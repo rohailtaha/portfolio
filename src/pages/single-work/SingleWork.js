@@ -20,7 +20,7 @@ function SingleWork({ project }) {
     <div>
       <Header />
       <main style={{ paddingTop: HEADER_HEIGHT }} className="responsive-pad">
-        <div className="pt-10 pb-16 mx-auto max-content-w">
+        <div className="pt-10 pb-32 mx-auto max-content-w">
           <BreadCrumbs links={breadCrumbLinks} />
           <section className="mt-10">
             <div className="mt-8">

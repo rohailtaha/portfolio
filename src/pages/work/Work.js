@@ -15,7 +15,7 @@ function Work() {
     <div>
       <Header />
       <main style={{ paddingTop: HEADER_HEIGHT }} className="responsive-pad">
-        <div className="pt-10 pb-20 mx-auto max-content-w">
+        <div className="pt-10 pb-32 mx-auto max-content-w">
           <BreadCrumbs links={breadCrumbLinks} />
           <section className="mt-10">
             <h1 className="text-3xl font-bold">Work</h1>

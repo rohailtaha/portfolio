@@ -16,7 +16,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="pt-4 pb-8 mt-4 text-sm responsive-pad text-text-muted">
+    <footer className="pb-8 text-sm responsive-pad text-text-muted">
       <div className="mx-auto max-content-w flex-cb">
         <ul className="flex-c gap-x-10">
           <li>© 2024 Rohail Taha</li>
@@ -24,27 +24,27 @@ function Footer() {
         <ul className="flex-c gap-x-4">
           <li>
             <a href={GITHUB_PROFILE_LINK}>
-              <GithubIcon />
+              <GithubIcon width="1.4rem" height="1.4rem" />
             </a>
           </li>
           <li>
             <a href={LINKEDIN_PROFILE_LINK}>
-              <LinkedInIcon />
+              <LinkedInIcon width="1.4rem" height="1.4rem" />
             </a>
           </li>
           <li>
             <a href={CODESANDBOX_PROFILE_LINK}>
-              <CodeSandboxIcon />
+              <CodeSandboxIcon width="1.25rem" height="1.25rem" />
             </a>
           </li>
           <li>
             <a href={FRONTEND_MENTOR_PROFILE_LINK}>
-              <FrontendMentorIcon />
+              <FrontendMentorIcon width="1.25rem" height="1.25rem" />
             </a>
           </li>
           <li>
             <a href={CODEPEN_PROFILE_LINK}>
-              <CodePenIcon />
+              <CodePenIcon width="1.25rem" height="1.25rem" />
             </a>
           </li>
         </ul>
