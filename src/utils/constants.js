@@ -66,8 +66,12 @@ export const PROJECTS = {
     name: 'Softwares Rating App',
     description:
       'A softwares-rating-app built with React and Firebase (Firebase authentication, cloud database and hosting). The user can see all reviews of any software, filter from 1 to 5 star reviews, rate and review any software after logging in, edit his/her ratings, change account settings.',
-    skills: ['React', 'Firebase', 'React Router'],
-    highlights: [],
+    skills: ['React', 'Firebase', 'React Router', 'Figma'],
+    highlights: [
+      'Prepared the design of the application on Figma.',
+      "Utilized Firebase's firestore, authentication and hosting services to handle application backend.",
+      'Used react router for client side navigation.',
+    ],
   },
   'nationpedia': {
     name: 'Nationpedia',
@@ -75,7 +79,9 @@ export const PROJECTS = {
       'An application that fetches and displays comprehensive information about world countries using the REST Countries API. Users are presented with a paginated list of countries sorted alphabetically. The app offers intuitive search functionality and region-based filters to quickly find specific countries. Detailed country information, including key facts and statistics, is accessible with a single click. Users can also navigate between neighboring countries via clickable border links. The application supports both light and dark modes for an enhanced user experience.',
     skills: ['React', 'Redux'],
     highlights: [
-      'Built thKed and installed the Ghost platform on server for hassle free blog management.',
+      'Read the api documentation for fetching the countries data.',
+      'Used Redux for storing the state of countries data.',
+      'Followed an existing design to make the ui of the application.',
     ],
   },
 };
