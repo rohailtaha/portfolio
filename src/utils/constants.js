@@ -16,8 +16,8 @@ export const PROJECTS = {
       'A centralized API hub for services like ipgeolocation.io, whoisfreaks.com and currencyfreaks.com, allowing users to manage subscriptions and organizations efficiently from a single platform.',
     skills: ['Next.js', 'TailwindCSS', 'PostgreSQL'],
     image: {
-      large: 'api-freaks2.png',
-      small: 'api-freaks.png',
+      large: 'api-freaks-large.png',
+      small: 'api-freaks-small.png',
     },
     viewLink: 'https://apifreaks.com',
     year: 2024,
@@ -36,8 +36,8 @@ export const PROJECTS = {
     description:
       'An AI-powered Tweet Generator featuring hashtag generation, bio generation, username suggestions, advanced tweet search and a browser extension.',
     image: {
-      large: 'tweetstorm2.png',
-      small: 'tweetstorm2.png',
+      large: 'tweetstorm-large.png',
+      small: 'tweetstorm-small.png',
     },
     viewLink: 'https://tweetstorm.ai',
     year: 2024,
@@ -58,8 +58,8 @@ export const PROJECTS = {
     description:
       'An AI-powered low-code website builder, that allows users to create websites with drag-and-drop functionality, customizable templates and AI enabled chat. Important features include conversion of linked resume to website, hosting via Amazon S3 and Cloudfront, and Stripe integration for subscriptions.',
     image: {
-      large: 'webbsai2.png',
-      small: 'webbsai.png',
+      large: 'webbsai-large.png',
+      small: 'webbsai-small.png',
     },
     viewLink: 'https://webbsai.com',
     year: 2023,
@@ -103,8 +103,8 @@ export const PROJECTS = {
     description:
       'An application that fetches and displays comprehensive information about world countries using the REST Countries API. Users are presented with a paginated list of countries sorted alphabetically. The app offers intuitive search functionality and region-based filters to quickly find specific countries. Detailed country information, including key facts and statistics, is accessible with a single click. Users can also navigate between neighboring countries via clickable border links. The application supports both light and dark modes for an enhanced user experience.',
     image: {
-      large: 'nationpedia.png',
-      small: 'nationpedia.png',
+      large: 'nationpedia-large.png',
+      small: 'nationpedia-small.png',
     },
     viewLink: 'https://rest-countries-api-ornd.vercel.app/',
     codeLink: 'https://github.com/rohailtaha/REST-Countries-API',

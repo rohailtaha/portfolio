@@ -5,10 +5,10 @@ import {
   CodeSandboxIcon,
   GithubIcon,
   LinkedInIcon,
-  ViewProjectIcon,
 } from '../../components/icons';
 import ArrowDownIcon from '../../components/icons/ArrowDownIcon';
 import ArrowRightIcon from '../../components/icons/ArrowRightIcon';
+import Projects from '../../components/Projects';
 import SectionHeading from '../../components/SectionHeading';
 import '../../styles/globals.css';
 import {
@@ -110,7 +110,7 @@ function App() {
             </ul>
           </div>
         </section>
-        <section id="work" className="pt-16 mx-auto max-content-w">
+        <section id="work" className="pt-16 mx-auto max-content-w space-y-7">
           <div className="flex-cb">
             <SectionHeading>Selected Work</SectionHeading>
             <div>
@@ -123,65 +123,7 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-7 gap-y-9 mt-7">
-            {Object.keys(PROJECTS)
-              .slice(0, 4)
-              .map(projectSlug => {
-                const project = PROJECTS[projectSlug];
-                return (
-                  <div className="space-y-4" key={projectSlug}>
-                    <a
-                      href={`/work/${projectSlug}`}
-                      className="block border h-[212px]"
-                    >
-                      <img
-                        src={`/${project.image.small}`}
-                        className="w-full h-full"
-                      />
-                    </a>
-                    <div className="space-y-2">
-                      <div className="flex-cb">
-                        <h3 className="text-lg font-semibold">
-                          {project.name}
-                        </h3>
-                        <div className="font-medium flex-c gap-x-2">
-                          {project.codeLink && (
-                            <a
-                              target="_blank"
-                              rel="noreferrer"
-                              href={project.codeLink}
-                            >
-                              <GithubIcon />
-                            </a>
-                          )}
-                          {project.viewLink && (
-                            <a
-                              target="_blank"
-                              rel="noreferrer"
-                              href={project.viewLink}
-                            >
-                              <ViewProjectIcon />
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                      <ul className="flex-c text-sm gap-x-[3px]">
-                        {project.skills.slice(0, 3).map(skill => {
-                          return (
-                            <li
-                              key={skill}
-                              className="px-3 py-1 text-xs font-medium bg-purple-100 rounded-full text-primary"
-                            >
-                              {skill}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </div>
-                );
-              })}
-          </div>
+          <Projects projects={Object.keys(PROJECTS).slice(0, 4)} />
         </section>
         <section id="about" className="pt-32 mx-auto max-content-w">
           <SectionHeading>Bio</SectionHeading>
