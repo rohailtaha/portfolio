@@ -15,6 +15,12 @@ export const PROJECTS = {
     description:
       'A centralized API hub for services like ipgeolocation.io, whoisfreaks.com and currencyfreaks.com, allowing users to manage subscriptions and organizations efficiently from a single platform.',
     skills: ['Next.js', 'TailwindCSS', 'PostgreSQL'],
+    image: {
+      large: 'api-freaks2.png',
+      small: 'api-freaks.png',
+    },
+    viewLink: 'https://apifreaks.com',
+    year: 2024,
     highlights: [
       'Built the frontend and api integration for the product.',
       'Lead the frontend team and distributed tasks to different team members.',
@@ -29,6 +35,12 @@ export const PROJECTS = {
     name: 'TweetStorm',
     description:
       'An AI-powered Tweet Generator featuring hashtag generation, bio generation, username suggestions, advanced tweet search and a browser extension.',
+    image: {
+      large: 'tweetstorm2.png',
+      small: 'tweetstorm2.png',
+    },
+    viewLink: 'https://tweetstorm.ai',
+    year: 2024,
     skills: ['Next.js', 'TailwindCSS', 'Stripe', 'MySQL'],
     highlights: [
       'Migrated the application from Laravel to Next.js.',
@@ -45,6 +57,12 @@ export const PROJECTS = {
     name: 'WebbsAI',
     description:
       'An AI-powered low-code website builder, that allows users to create websites with drag-and-drop functionality, customizable templates and AI enabled chat. Important features include conversion of linked resume to website, hosting via Amazon S3 and Cloudfront, and Stripe integration for subscriptions.',
+    image: {
+      large: 'webbsai2.png',
+      small: 'webbsai.png',
+    },
+    viewLink: 'https://webbsai.com',
+    year: 2023,
     skills: [
       'Next.js',
       'TailwindCSS',
@@ -67,6 +85,13 @@ export const PROJECTS = {
     description:
       'A softwares-rating-app built with React and Firebase (Firebase authentication, cloud database and hosting). The user can see all reviews of any software, filter from 1 to 5 star reviews, rate and review any software after logging in, edit his/her ratings, change account settings.',
     skills: ['React', 'Firebase', 'React Router', 'Figma'],
+    viewLink: 'https://my-holiday-proje-1616778972307.web.app/',
+    codeLink: 'https://github.com/rohailtaha/Softwares-Rating-App',
+    year: 2021,
+    image: {
+      large: 'softwares-rating-app.png',
+      small: 'softwares-rating-app.png',
+    },
     highlights: [
       'Prepared the design of the application on Figma.',
       "Utilized Firebase's firestore, authentication and hosting services to handle application backend.",
@@ -77,6 +102,13 @@ export const PROJECTS = {
     name: 'Nationpedia',
     description:
       'An application that fetches and displays comprehensive information about world countries using the REST Countries API. Users are presented with a paginated list of countries sorted alphabetically. The app offers intuitive search functionality and region-based filters to quickly find specific countries. Detailed country information, including key facts and statistics, is accessible with a single click. Users can also navigate between neighboring countries via clickable border links. The application supports both light and dark modes for an enhanced user experience.',
+    image: {
+      large: 'nationpedia.png',
+      small: 'nationpedia.png',
+    },
+    viewLink: 'https://rest-countries-api-ornd.vercel.app/',
+    codeLink: 'https://github.com/rohailtaha/REST-Countries-API',
+    year: 2021,
     skills: ['React', 'Redux'],
     highlights: [
       'Read the api documentation for fetching the countries data.',

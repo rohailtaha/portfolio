@@ -8,3 +8,4 @@ export * from './CodeSandboxIcon';
 export * from './FrontendMentorIcon';
 export * from './CodePenIcon';
 export * from './ArrowDownIcon';
+export * from './ViewProjectIcon';

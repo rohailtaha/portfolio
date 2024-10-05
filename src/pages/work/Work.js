@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { HEADER_HEIGHT, PROJECTS } from '../../utils/constants';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { DotIcon } from '../../components/icons';
+import { DotIcon, GithubIcon, ViewProjectIcon } from '../../components/icons';
 import BreadCrumbs from '../../components/BreadCrumbs';
 
 const breadCrumbLinks = [
@@ -26,10 +26,39 @@ function Work() {
                   <div className="space-y-4" key={project.name}>
                     <a
                       href={`/work/${projectSlug}`}
-                      className="bg-primary rounded-xl h-[230px] block"
-                    ></a>
+                      className="block border h-[212px]"
+                    >
+                      <img
+                        src={`/${project.image.small}`}
+                        className="w-full h-full"
+                      />
+                    </a>
                     <div className="space-y-2">
-                      <h3 className="text-lg font-semibold">{project.name}</h3>
+                      <div className="flex-cb">
+                        <h3 className="text-lg font-semibold">
+                          {project.name}
+                        </h3>
+                        <div className="font-medium flex-c gap-x-2">
+                          {project.codeLink && (
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              href={project.codeLink}
+                            >
+                              <GithubIcon />
+                            </a>
+                          )}
+                          {project.viewLink && (
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              href={project.viewLink}
+                            >
+                              <ViewProjectIcon />
+                            </a>
+                          )}
+                        </div>
+                      </div>
                       <div className="text-sm flex-cb">
                         <ul className="flex-c gap-x-[3px]">
                           {project.skills.slice(0, 3).map((skill, index) => {
@@ -48,9 +77,6 @@ function Work() {
                             );
                           })}
                         </ul>
-                        <span className="px-2 py-0.5 font-medium bg-purple-300 rounded-full text-primary">
-                          {'2023'}
-                        </span>
                       </div>
                     </div>
                   </div>
