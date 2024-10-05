@@ -214,7 +214,8 @@ function App() {
                 </p>
               </div>
               <a
-                href="/"
+                href="/resume.pdf"
+                download="resume.pdf"
                 className="inline-flex items-center px-5 py-3 font-semibold text-white rounded-full gap-x-2 mt-7 bg-primary"
               >
                 <span>Download my resume</span>
