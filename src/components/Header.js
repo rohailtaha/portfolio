@@ -1,11 +1,13 @@
-import React, { useEffect, useRef } from 'react';
-import { ChatIcon } from './icons';
+import React, { useEffect, useRef, useState } from 'react';
+import { CloseIcon, HamburgerIcon } from './icons';
+import MobileMenu from './MobileMenu';
 
 const borderClasses = ['shadow-sm', 'border-b'];
 
 function Header() {
   const scroll = useRef(0);
   const headerElement = useRef(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -30,25 +32,27 @@ function Header() {
   return (
     <header
       id="header"
-      className="fixed w-full py-4 bg-white z-[1] responsive-pad"
+      className="fixed w-full py-6 bg-white z-[1] responsive-pad"
     >
-      <div className="mx-auto font-medium flex-b max-content-w text-text-primary">
-        <nav className="flex-c gap-x-16">
+      <div className="mx-auto font-medium flex-cb max-content-w text-text-primary">
+        <div className="w-full flex-c sm:justify-between md:justify-start gap-x-24">
           <a href="/" className="text-lg font-bold text-primary">
             Rohail Taha
           </a>
-          <div className="flex-c gap-x-8">
+          <nav className="items-center hidden gap-x-8 sm:flex">
             <a href="/work">Work</a>
             <a href="/#about">About</a>
             <a href="/contact">Contact</a>
-          </div>
-        </nav>
-        <a
-          href="/contact"
-          className="px-4 py-2 border-2 rounded-full border-text-primary flex-cb gap-x-1 text-text-primary"
+          </nav>
+        </div>
+        <button
+          type="button"
+          className="sm:hidden"
+          onClick={() => setIsMobileMenuOpen(prev => !prev)}
         >
-          <ChatIcon /> <span>Let&apos;s talk</span>
-        </a>
+          {!isMobileMenuOpen ? <HamburgerIcon /> : <CloseIcon />}
+        </button>
+        {isMobileMenuOpen && <MobileMenu />}
       </div>
     </header>
   );

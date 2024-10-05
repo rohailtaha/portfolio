@@ -26,7 +26,7 @@ function SingleWork({ project }) {
             <div className="mt-8">
               <img
                 src={`/${project.image.large}`}
-                className="h-[454px] rounded-xl border"
+                className="border rounded-xl"
               />
             </div>
             <div className="flex-cb mt-9">

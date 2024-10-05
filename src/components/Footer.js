@@ -17,11 +17,11 @@ import {
 function Footer() {
   return (
     <footer className="pb-8 text-sm responsive-pad text-text-muted">
-      <div className="mx-auto max-content-w flex-cb">
-        <ul className="flex-c gap-x-10">
+      <div className="mx-auto space-y-4 text-center xs:space-y-0 xs:text-left max-content-w xs:flex-cb">
+        <ul>
           <li>© 2024 Rohail Taha</li>
         </ul>
-        <ul className="flex-c gap-x-4">
+        <ul className="flex-cc gap-x-4">
           <li>
             <a href={GITHUB_PROFILE_LINK}>
               <GithubIcon width="1.4rem" height="1.4rem" />

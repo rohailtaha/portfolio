@@ -1,22 +1,24 @@
 import React, { Fragment } from 'react';
-import '../../styles/globals.css';
-import { HEADER_HEIGHT, PROJECTS } from '../../utils/constants';
-import SectionHeading from '../../components/SectionHeading';
 import Footer from '../../components/Footer';
-import ArrowRightIcon from '../../components/icons/ArrowRightIcon';
 import Header from '../../components/Header';
-import { DotIcon, ViewProjectIcon } from '../../components/icons';
+import {
+  CodeSandboxIcon,
+  DotIcon,
+  GithubIcon,
+  LinkedInIcon,
+  ViewProjectIcon,
+} from '../../components/icons';
 import ArrowDownIcon from '../../components/icons/ArrowDownIcon';
+import ArrowRightIcon from '../../components/icons/ArrowRightIcon';
+import SectionHeading from '../../components/SectionHeading';
+import '../../styles/globals.css';
 import {
   CODESANDBOX_PROFILE_LINK,
   GITHUB_PROFILE_LINK,
+  HEADER_HEIGHT,
   LINKEDIN_PROFILE_LINK,
+  PROJECTS,
 } from '../../utils/constants';
-import {
-  CodeSandboxIcon,
-  GithubIcon,
-  LinkedInIcon,
-} from '../../components/icons';
 
 const EXPERIENCES = [
   {
@@ -80,9 +82,9 @@ function App() {
       <Header />
       <main style={{ paddingTop: HEADER_HEIGHT }} className="responsive-pad">
         <section className="pt-32 pb-32 mx-auto max-content-w">
-          <div className="grid items-center grid-cols-[1fr,auto] grow">
+          <div className="grid items-center lg:grid-cols-[1fr,auto] grow">
             <div>
-              <h1 className="text-6xl font-bold">
+              <h1 className="text-5xl font-bold xs:text-6xl">
                 Hi, I&apos;m <br></br>
                 <span className="text-primary"> Rohail Taha </span>
               </h1>
@@ -90,7 +92,7 @@ function App() {
                 A Full Stack Developer Crafting Elegant Solutions for the Web.
               </p>
             </div>
-            <ul className="mt-8 space-y-4 justify-self-end">
+            <ul className="flex flex-row gap-4 mt-8 lg:flex-col lg:justify-self-end">
               <li>
                 <a href={GITHUB_PROFILE_LINK}>
                   <GithubIcon width="1.75rem" height="1.75rem" />
@@ -122,7 +124,7 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-x-7 gap-y-9 mt-7">
+          <div className="grid md:grid-cols-2 gap-x-7 gap-y-9 mt-7">
             {Object.keys(PROJECTS)
               .slice(0, 4)
               .map(projectSlug => {
@@ -191,7 +193,7 @@ function App() {
         </section>
         <section id="about" className="pt-32 mx-auto max-content-w">
           <SectionHeading>Bio</SectionHeading>
-          <div className="grid justify-between grid-cols-[1.4fr_1fr] mt-7 gap-x-24">
+          <div className="grid justify-between md:grid-cols-[1.4fr_1fr] mt-7 gap-x-24">
             <div>
               <div className="space-y-3 text-text-primary">
                 <p>
@@ -277,10 +279,10 @@ function App() {
         </section>
         <section className="pt-16 pb-32 mx-auto max-content-w">
           <SectionHeading>Tech Stack</SectionHeading>
-          <div className="grid grid-cols-3 font-medium gap-x-16 mt-7 text-text-primary">
+          <div className="grid font-medium gap-x-16 gap-y-8 sm:grid-cols-3 mt-7 text-text-primary">
             <div>
               <h3 className="text-text-secondary">Frontend</h3>
-              <ul className="mt-4 flex flex-col gap-y-4 flex-wrap max-h-[250px]">
+              <ul className="mt-4 flex sm:flex-col gap-4 flex-wrap max-h-[250px]">
                 {SKILLS.frontend.map(skill => {
                   return <li key={skill}>{skill}</li>;
                 })}
@@ -288,7 +290,7 @@ function App() {
             </div>
             <div>
               <h3 className="text-text-secondary">Backend</h3>
-              <ul className="mt-4 flex flex-col gap-y-4 flex-wrap max-h-[250px]">
+              <ul className="mt-4 flex sm:flex-col gap-4 flex-wrap max-h-[250px]">
                 {SKILLS.backend.map(skill => {
                   return <li key={skill}>{skill}</li>;
                 })}
@@ -296,7 +298,7 @@ function App() {
             </div>
             <div>
               <h3 className="text-text-secondary">Other</h3>
-              <ul className="mt-4 flex flex-col gap-y-4 flex-wrap max-h-[250px]">
+              <ul className="mt-4 flex sm:flex-col gap-4 flex-wrap max-h-[250px]">
                 {SKILLS.other.map(skill => {
                   return <li key={skill}>{skill}</li>;
                 })}
