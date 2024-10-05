@@ -185,7 +185,7 @@ function App() {
         </section>
         <section id="about" className="pt-32 mx-auto max-content-w">
           <SectionHeading>Bio</SectionHeading>
-          <div className="grid justify-between md:grid-cols-[1.4fr_1fr] mt-7 gap-x-24">
+          <div className="grid justify-between md:grid-cols-[1.4fr_1fr] mt-7 gap-x-8 lg:gap-x-24">
             <div>
               <div className="space-y-3 text-text-primary">
                 <p>
@@ -219,7 +219,7 @@ function App() {
               </a>
             </div>
             <div>
-              <div className="px-2 pt-2 text-center -rotate-[6deg] -translate-y-10 bg-white border shadow-lg w-fit">
+              <div className="px-2 pt-2 hidden md:inline-block text-center -rotate-[6deg] -translate-y-10 bg-white border shadow-lg w-fit">
                 <img
                   src="/me.png"
                   className="bg-white w-[219px] h-[306px]"
