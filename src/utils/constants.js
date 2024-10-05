@@ -11,6 +11,7 @@ export const YEARS_OF_EXPERIENCE = 2.5;
 
 export const PROJECTS = {
   'api-freaks': {
+    slug: 'api-freaks',
     name: 'APIFreaks',
     description:
       'A centralized API hub for services like ipgeolocation.io, whoisfreaks.com and currencyfreaks.com, allowing users to manage subscriptions and organizations efficiently from a single platform.',
@@ -32,6 +33,7 @@ export const PROJECTS = {
     ],
   },
   tweetstorm: {
+    slug: 'tweetstorm',
     name: 'TweetStorm',
     description:
       'An AI-powered Tweet Generator featuring hashtag generation, bio generation, username suggestions, advanced tweet search and a browser extension.',
@@ -54,7 +56,8 @@ export const PROJECTS = {
     ],
   },
   webbsai: {
-    name: 'WebbsAI',
+    slug: 'webbsai',
+    name: 'webbsai',
     description:
       'An AI-powered low-code website builder, that allows users to create websites with drag-and-drop functionality, customizable templates and AI enabled chat. Important features include conversion of linked resume to website, hosting via Amazon S3 and Cloudfront, and Stripe integration for subscriptions.',
     image: {
@@ -81,6 +84,7 @@ export const PROJECTS = {
     ],
   },
   'softwares-rating-app': {
+    slug: 'softwares-rating-app',
     name: 'Softwares Rating App',
     description:
       'A softwares-rating-app built with React and Firebase (Firebase authentication, cloud database and hosting). The user can see all reviews of any software, filter from 1 to 5 star reviews, rate and review any software after logging in, edit his/her ratings, change account settings.',
@@ -99,6 +103,7 @@ export const PROJECTS = {
     ],
   },
   'nationpedia': {
+    slug: 'nationpedia',
     name: 'Nationpedia',
     description:
       'An application that fetches and displays comprehensive information about world countries using the REST Countries API. Users are presented with a paginated list of countries sorted alphabetically. The app offers intuitive search functionality and region-based filters to quickly find specific countries. Detailed country information, including key facts and statistics, is accessible with a single click. Users can also navigate between neighboring countries via clickable border links. The application supports both light and dark modes for an enhanced user experience.',

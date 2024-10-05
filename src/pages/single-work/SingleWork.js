@@ -11,7 +11,7 @@ function SingleWork({ project }) {
     return [
       { href: '/', name: 'Home' },
       { href: '/work', name: 'Work' },
-      { href: window.location.href, name: project.name },
+      { href: `/work/${project.slug}`, name: project.name },
     ];
   }, [project.name]);
 
