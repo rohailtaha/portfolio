@@ -1,11 +1,10 @@
-import React, { Fragment, useMemo } from 'react';
-import { HEADER_HEIGHT } from '../../utils/constants';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import SectionHeading from '../../components/SectionHeading';
-import { DotIcon } from '../../components/icons/DotIcon';
-import { GithubIcon, TickIcon, ViewProjectIcon } from '../../components/icons';
+import React, { useMemo } from 'react';
 import BreadCrumbs from '../../components/BreadCrumbs';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import SectionHeading from '../../components/SectionHeading';
+import { GithubIcon, TickIcon, ViewProjectIcon } from '../../components/icons';
+import { HEADER_HEIGHT } from '../../utils/constants';
 
 function SingleWork({ project }) {
   const breadCrumbLinks = useMemo(() => {
@@ -31,25 +30,22 @@ function SingleWork({ project }) {
             </div>
             <div className="flex-cb mt-9">
               <h1 className="text-3xl font-bold">{project.name}</h1>
-              <span className="px-2 py-0.5 font-medium bg-purple-300 rounded-full text-primary">
+              <span className="px-2 py-0.5 font-medium bg-purple-200 rounded-full text-primary">
                 {project.year}
               </span>
             </div>
-            <div className="mt-6 text-sm flex-cb">
+            <div className="gap-2 mt-6 flex-cb">
               <div>
                 <h2 className="font-medium">Tech Stack</h2>
-                <ul className="mt-2 flex-c gap-x-1">
-                  {project.skills.map((skill, index) => {
-                    const isLastItem = index === project.skills.length - 1;
+                <ul className="flex-wrap gap-1 mt-2 text-sm flex-c">
+                  {project.skills.map(skill => {
                     return (
-                      <Fragment key={skill}>
-                        <li>{skill}</li>
-                        {!isLastItem && (
-                          <li key={skill}>
-                            <DotIcon />
-                          </li>
-                        )}
-                      </Fragment>
+                      <li
+                        key={skill}
+                        className="px-3 py-1 font-medium bg-purple-200 rounded-full text-primary"
+                      >
+                        {skill}
+                      </li>
                     );
                   })}
                 </ul>

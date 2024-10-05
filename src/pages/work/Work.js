@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
-import { HEADER_HEIGHT, PROJECTS } from '../../utils/constants';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import { DotIcon, GithubIcon, ViewProjectIcon } from '../../components/icons';
+import React from 'react';
 import BreadCrumbs from '../../components/BreadCrumbs';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import { GithubIcon, ViewProjectIcon } from '../../components/icons';
+import { HEADER_HEIGHT, PROJECTS } from '../../utils/constants';
 
 const breadCrumbLinks = [
   { href: '/', name: 'Home' },
@@ -19,7 +19,7 @@ function Work() {
           <BreadCrumbs links={breadCrumbLinks} />
           <section className="mt-10">
             <h1 className="text-3xl font-bold">Work</h1>
-            <div className="grid grid-cols-2 gap-x-7 gap-y-9 mt-7">
+            <div className="grid md:grid-cols-2 gap-x-7 gap-y-9 mt-7">
               {Object.keys(PROJECTS).map(projectSlug => {
                 const project = PROJECTS[projectSlug];
                 return (
@@ -61,19 +61,14 @@ function Work() {
                       </div>
                       <div className="text-sm flex-cb">
                         <ul className="flex-c gap-x-[3px]">
-                          {project.skills.slice(0, 3).map((skill, index) => {
-                            const isLastItem =
-                              index === project.skills.length - 1 ||
-                              index === 2;
+                          {project.skills.slice(0, 3).map(skill => {
                             return (
-                              <Fragment key={skill}>
-                                <li>{skill}</li>
-                                {!isLastItem && (
-                                  <li>
-                                    <DotIcon />
-                                  </li>
-                                )}
-                              </Fragment>
+                              <li
+                                key={skill}
+                                className="px-3 py-1 text-xs font-medium bg-purple-100 rounded-full text-primary"
+                              >
+                                {skill}
+                              </li>
                             );
                           })}
                         </ul>

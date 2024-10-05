@@ -1,9 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import {
   CodeSandboxIcon,
-  DotIcon,
   GithubIcon,
   LinkedInIcon,
   ViewProjectIcon,
@@ -166,25 +165,18 @@ function App() {
                           )}
                         </div>
                       </div>
-                      <div className="text-sm flex-cb">
-                        <ul className="flex-c gap-x-[3px]">
-                          {project.skills.slice(0, 3).map((skill, index) => {
-                            const isLastItem =
-                              index === project.skills.length - 1 ||
-                              index === 2;
-                            return (
-                              <Fragment key={skill}>
-                                <li>{skill}</li>
-                                {!isLastItem && (
-                                  <li>
-                                    <DotIcon />
-                                  </li>
-                                )}
-                              </Fragment>
-                            );
-                          })}
-                        </ul>
-                      </div>
+                      <ul className="flex-c text-sm gap-x-[3px]">
+                        {project.skills.slice(0, 3).map(skill => {
+                          return (
+                            <li
+                              key={skill}
+                              className="px-3 py-1 text-xs font-medium bg-purple-100 rounded-full text-primary"
+                            >
+                              {skill}
+                            </li>
+                          );
+                        })}
+                      </ul>
                     </div>
                   </div>
                 );
