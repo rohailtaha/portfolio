@@ -7,6 +7,8 @@ export const CODEPEN_PROFILE_LINK = 'https://codepen.io/Rohail_Taha';
 export const FRONTEND_MENTOR_PROFILE_LINK =
   'https://www.frontendmentor.io/profile/rohailtaha';
 
+export const MY_EMAIL = 'taharohail77@gmail.com';
+
 export const YEARS_OF_EXPERIENCE = 2.5;
 
 export const PROJECTS = {
