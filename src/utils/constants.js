@@ -59,7 +59,7 @@ export const PROJECTS = {
   },
   webbsai: {
     slug: 'webbsai',
-    name: 'webbsai',
+    name: 'WebbsAI',
     description:
       'An AI-powered low-code website builder, that allows users to create websites with drag-and-drop functionality, customizable templates and AI enabled chat. Important features include conversion of linked resume to website, hosting via Amazon S3 and Cloudfront, and Stripe integration for subscriptions.',
     image: {
@@ -122,5 +122,38 @@ export const PROJECTS = {
       'Used Redux for storing the state of countries data.',
       'Followed an existing design to make the ui of the application.',
     ],
+  },
+};
+
+export const PROJECT_PAGES_SEO_DATA = {
+  'api-freaks': {
+    title: 'Work - APIFreaks',
+    description:
+      'APIFreaks is an API hub for ipgeolocation.io, whoisfreaks.com and currencyfreaks.com, allowing users to manage subscriptions and organizations from a single platform.',
+    ogImage: 'api-freaks-large.png',
+  },
+  tweetstorm: {
+    title: 'Work - TweetStorm',
+    description:
+      'An AI-powered Tweet Generator featuring hashtag generation, bio generation, username suggestions, advanced tweet search and a browser extension.',
+    ogImage: 'tweetstorm-large.png',
+  },
+  webbsai: {
+    title: 'Work - WebbsAI',
+    description:
+      'An AI-powered low-code website builder, that allows users to create websites with drag-and-drop functionality, customizable templates and AI enabled chat.',
+    ogImage: 'webbsai-large.png',
+  },
+  'softwares-rating-app': {
+    title: 'Work - Softwares Rating App',
+    description:
+      'A softwares-rating-app built with React and Firebase (Firebase authentication, cloud database and hosting).',
+    ogImage: 'softwares-rating-app.png',
+  },
+  'nationpedia': {
+    title: 'Work - Nationpedia',
+    description:
+      'An application that fetches and displays comprehensive information about world countries using the REST Countries API.',
+    ogImage: 'nationpedia-large.png',
   },
 };
