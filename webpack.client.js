@@ -8,13 +8,13 @@ module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   entry: isDevelopment
     ? {
-        index: './src/client-dev.js',
+        index: './src/pages/home/render.js',
         'single-work': './src/pages/single-work/render.js',
         'work': './src/pages/work/render.js',
         'contact': './src/pages/contact/render.js',
       }
     : {
-        index: './src/client.js',
+        index: './src/pages/home/hydrate.js',
         'single-work': './src/pages/single-work/hydrate.js',
         'work': './src/pages/work/hydrate.js',
         'contact': './src/pages/contact/hydrate.js',
@@ -43,13 +43,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.(png|jpg|jpeg|gif|svg)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'images/[name][hash][ext]',
-        },
-      },
       {
         test: /\.js$/,
         exclude: /node_modules/,

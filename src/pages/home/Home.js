@@ -75,7 +75,7 @@ const SKILLS = {
   other: ['Docker', 'Figma'],
 };
 
-function App() {
+function Home() {
   return (
     <div>
       <Header />
@@ -246,4 +246,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

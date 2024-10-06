@@ -1,6 +1,6 @@
 import React from 'react';
-import App from './pages/home/App';
 import { hydrateRoot } from 'react-dom/client';
+import Home from './Home';
 
 const rootElement = document.getElementById('root');
-hydrateRoot(rootElement, <App />);
+hydrateRoot(rootElement, <Home />);

@@ -8,7 +8,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import './1-env-loader';
 import Contact from './src/pages/contact/Contact';
-import App from './src/pages/home/App';
+import Home from './src/pages/home/Home';
 import SingleWork from './src/pages/single-work/SingleWork';
 import Work from './src/pages/work/Work';
 import {
@@ -25,7 +25,7 @@ app.use(express.static('build'));
 
 app.get('/', (req, res) => {
   try {
-    const appMarkup = renderToString(<App />);
+    const appMarkup = renderToString(<Home />);
     const indexFile = path.resolve(__dirname, 'public', 'index.html');
     fs.readFile(indexFile, 'utf8', (err, data) => {
       if (err) {
