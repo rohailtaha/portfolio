@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build:client": "cross-env NODE_ENV=production webpack --config webpack.client.js",
+    "build:client": "cross-env NODE_ENV=production webpack --config webpack.client.js && rm -rf build/assets && cp -r public/assets build/assets",
     "build:server": "cross-env NODE_ENV=production webpack --config webpack.server.js",
     "build": "npm run build:client",
     "start": "npx babel-node --config-file ./babel.server.js server.js",

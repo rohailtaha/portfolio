@@ -24,7 +24,7 @@ function SingleWork({ project }) {
           <section className="mt-10">
             <div className="mt-8">
               <img
-                src={`/${project.image.large}`}
+                src={`/assets/${project.image.large}`}
                 className="border rounded-xl"
               />
             </div>

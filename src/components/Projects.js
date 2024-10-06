@@ -10,7 +10,7 @@ function Projects({ projects }) {
         return (
           <div className="space-y-4" key={projectSlug}>
             <a href={`/work/${projectSlug}`} className="block border">
-              <img src={`/${project.image.small}`} className="" />
+              <img src={`/assets/${project.image.small}`} className="" />
             </a>
             <div className="space-y-2">
               <div className="flex-cb">

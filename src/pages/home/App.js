@@ -150,8 +150,8 @@ function App() {
                 </p>
               </div>
               <a
-                href="/resume.pdf"
-                download="resume.pdf"
+                href="/assets/resume.pdf"
+                download="rohail-resume.pdf"
                 className="inline-flex items-center px-5 py-3 font-semibold text-white rounded-full gap-x-2 mt-7 bg-primary"
               >
                 <span>Download my resume</span>
@@ -163,7 +163,7 @@ function App() {
             <div>
               <div className="px-2 pt-2 hidden md:inline-block text-center -rotate-[6deg] -translate-y-10 bg-white border shadow-lg w-fit">
                 <img
-                  src="/me.png"
+                  src="/assets/me.png"
                   className="bg-white w-[219px] h-[306px]"
                 ></img>
                 <span className="inline-block my-1 italic">This is me!</span>
