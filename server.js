@@ -16,6 +16,7 @@ import {
   EMAIL_SERVICE,
   PORT,
 } from './src/server-utils/constants';
+import { serverErrorResponse } from './src/server-utils/helpers';
 import { MY_EMAIL, PROJECTS } from './src/utils/constants';
 
 const app = express();
@@ -39,8 +40,8 @@ app.get('/', (req, res) => {
         )
       );
     });
-  } catch (err) {
-    console.error(err);
+  } catch {
+    return serverErrorResponse(res);
   }
 });
 
@@ -61,8 +62,8 @@ app.get('/contact', (req, res) => {
         )
       );
     });
-  } catch (err) {
-    console.error(err);
+  } catch {
+    return serverErrorResponse(res);
   }
 });
 
@@ -83,8 +84,8 @@ app.get('/work', (req, res) => {
         )
       );
     });
-  } catch (err) {
-    console.error(err);
+  } catch {
+    return serverErrorResponse(res);
   }
 });
 
@@ -108,41 +109,44 @@ app.get('/work/:projectName', (req, res) => {
         )
       );
     });
-  } catch (err) {
-    console.error(err);
+  } catch {
+    return serverErrorResponse(res);
   }
 });
 
+app.use(express.json());
+
 app.post('/contact', (req, res) => {
   try {
-    const { email, name, subject, message } = req.body;
+    const { email: fromEmail, name, subject, message } = req.body;
     const transporter = nodemailer.createTransport({
       service: EMAIL_SERVICE,
       auth: {
         user: MY_EMAIL,
-        pass: EMAIL_SERVER_PASSWORD, // App password generated in step 3
+        pass: EMAIL_SERVER_PASSWORD,
       },
     });
 
     const mailOptions = {
-      from: email,
+      from: fromEmail,
       to: MY_EMAIL,
       subject: subject ? subject : 'Contact Form Submission',
-      text: message,
+      text: `Email From: ${fromEmail}\nName: ${name}\n\n${message}`,
+      replyTo: fromEmail,
     };
 
-    // Send email
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
-        console.log(error);
+        console.error(error);
       } else {
         console.log('Email sent: ' + info.response);
       }
     });
 
     res.status(201).end();
-  } catch {
-    res.status(500).end();
+  } catch (err) {
+    console.error(err);
+    return serverErrorResponse(res);
   }
 });
 

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useFormFeedback } from '../hooks/hooks';
+import { MY_EMAIL } from '../utils/constants';
+import FormFeedback from './FormFeedback';
 
 function ContactForm() {
   const [form, setForm] = useState({
@@ -8,13 +11,42 @@ function ContactForm() {
     message: '',
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const { formFeedback, resetFeedback, setError, setSuccess } =
+    useFormFeedback();
+
   function handleChange(e) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleFormSubmit(e) {
+  async function handleFormSubmit(e) {
     e.preventDefault();
-    console.log('submit');
+    setIsLoading(true);
+    if (formFeedback) resetFeedback();
+    try {
+      const response = await fetch('/contact', {
+        method: 'POST',
+        body: JSON.stringify(form),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.ok) {
+        setSuccess(
+          "Your message is received. I'll get back to you soon.",
+          3000
+        );
+      } else {
+        const data = await response.json();
+        setError(data.error.message);
+      }
+    } catch {
+      setError(
+        `Something went wrong. We're very sorry. You can try sending email directly to ${MY_EMAIL}`
+      );
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   const { email, message, name, subject } = form;
@@ -59,18 +91,24 @@ function ContactForm() {
           <button
             type="submit"
             className="px-5 py-3 font-semibold text-white rounded-full bg-primary"
+            disabled={isLoading}
           >
             Send Message
           </button>
+          {formFeedback && (
+            <div>
+              <FormFeedback
+                formFeedback={formFeedback}
+                resetFeedback={resetFeedback}
+              />
+            </div>
+          )}
         </div>
 
         <ul className="grid text-sm sm:grid-cols-2 md:grid-cols-1 gap-y-8">
           <li>
             <div> Email me </div>
-            <div className="text-lg text-text-primary">
-              {' '}
-              taharohail77@gmail.com{' '}
-            </div>
+            <div className="text-lg text-text-primary"> {MY_EMAIL} </div>
           </li>
           <li>
             <div> Call me </div>
