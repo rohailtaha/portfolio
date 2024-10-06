@@ -164,6 +164,7 @@ function Home() {
               <div className="px-2 pt-2 hidden md:inline-block text-center -rotate-[6deg] -translate-y-10 bg-white border shadow-lg w-fit">
                 <img
                   src="/assets/me.png"
+                  alt="my-image"
                   className="bg-white w-[219px] h-[306px]"
                 ></img>
                 <span className="inline-block my-1 italic">This is me!</span>

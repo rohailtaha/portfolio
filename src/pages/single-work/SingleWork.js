@@ -26,6 +26,7 @@ function SingleWork({ project }) {
               <img
                 src={`/assets/${project.image.large}`}
                 className="border rounded-xl"
+                alt={`image for project ${project.name}`}
               />
             </div>
             <div className="flex-cb mt-9">
