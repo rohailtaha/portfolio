@@ -7,7 +7,7 @@ function BreadCrumbs({ links }) {
         const isLastLink = index === links.length - 1;
         return (
           <Fragment key={link.href}>
-            <li className={isLastLink && 'font-bold underline'}>
+            <li className={isLastLink ? 'font-bold underline' : ''}>
               <a href={link.href}>{link.name}</a>
             </li>
             {!isLastLink && (
