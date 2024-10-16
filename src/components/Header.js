@@ -48,6 +48,7 @@ function Header() {
         <button
           type="button"
           className="sm:hidden"
+          aria-label="Toggle Mobile Navigation"
           onClick={() => setIsMobileMenuOpen(prev => !prev)}
         >
           {!isMobileMenuOpen ? <HamburgerIcon /> : <CloseIcon />}

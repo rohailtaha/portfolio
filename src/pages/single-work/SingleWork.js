@@ -53,12 +53,22 @@ function SingleWork({ project }) {
               </div>
               <div className="font-medium flex-c gap-x-3">
                 {project.codeLink && (
-                  <a target="_blank" rel="noreferrer" href={project.codeLink}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href={project.codeLink}
+                    aria-label="View project on GitHub"
+                  >
                     <GithubIcon />
                   </a>
                 )}
                 {project.viewLink && (
-                  <a target="_blank" rel="noreferrer" href={project.viewLink}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href={project.viewLink}
+                    aria-label="View project"
+                  >
                     <ViewProjectIcon />
                   </a>
                 )}

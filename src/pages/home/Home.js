@@ -93,17 +93,26 @@ function Home() {
             </div>
             <ul className="flex flex-row gap-4 mt-8 lg:flex-col lg:justify-self-end">
               <li>
-                <a href={GITHUB_PROFILE_LINK}>
+                <a
+                  href={GITHUB_PROFILE_LINK}
+                  aria-label="View my GitHub profile"
+                >
                   <GithubIcon width="1.75rem" height="1.75rem" />
                 </a>
               </li>
               <li>
-                <a href={LINKEDIN_PROFILE_LINK}>
+                <a
+                  href={LINKEDIN_PROFILE_LINK}
+                  aria-label="View my LinkedIn profile"
+                >
                   <LinkedInIcon width="1.75rem" height="1.75rem" />
                 </a>
               </li>
               <li>
-                <a href={CODESANDBOX_PROFILE_LINK}>
+                <a
+                  href={CODESANDBOX_PROFILE_LINK}
+                  aria-label="View my CodeSandbox profile"
+                >
                   <CodeSandboxIcon width="1.75rem" height="1.75rem" />
                 </a>
               </li>

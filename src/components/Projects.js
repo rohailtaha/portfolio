@@ -20,12 +20,22 @@ function Projects({ projects }) {
                 <h3 className="text-lg font-semibold">{project.name}</h3>
                 <div className="font-medium flex-c gap-x-2">
                   {project.codeLink && (
-                    <a target="_blank" rel="noreferrer" href={project.codeLink}>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href={project.codeLink}
+                      aria-label="View project on GitHub"
+                    >
                       <GithubIcon />
                     </a>
                   )}
                   {project.viewLink && (
-                    <a target="_blank" rel="noreferrer" href={project.viewLink}>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href={project.viewLink}
+                      aria-label="View project"
+                    >
                       <ViewProjectIcon />
                     </a>
                   )}
