@@ -22,4 +22,4 @@ jobs:
 
       - name: Running deployment script
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ vars.SERVER_USER }}@${{ vars.SERVER_IP }} '~/scripts/deploy.sh ${{ secrets.ENVS }}'
+          ssh -i ~/.ssh/id_rsa ${{ vars.SERVER_USER }}@${{ vars.SERVER_IP }} '~/scripts/deploy.sh "${{ secrets.ENVS }}"'
