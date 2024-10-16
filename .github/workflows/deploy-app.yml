@@ -22,5 +22,4 @@ jobs:
 
       - name: Running deployment script
         run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no azureuser@${{ vars.SERVER_IP }} "echo 'SSH Connection Successful'"
-          ssh -i ~/.ssh/id_rsa ${{ vars.SERVER_USER }}@${{ vars.SERVER_IP }} '~/scripts/deploy.sh ${{ secrets.ENVS }} &>/dev/null'
+          ssh -i ~/.ssh/id_rsa ${{ vars.SERVER_USER }}@${{ vars.SERVER_IP }} '~/scripts/deploy.sh ${{ secrets.ENVS }}'
