@@ -3,7 +3,7 @@ name: Deploy to Production
 on:
   push:
     branches:
-      - cd/add-deployment-workflow
+      - main
 
 jobs:
   deploy:
