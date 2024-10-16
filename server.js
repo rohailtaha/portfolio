@@ -150,6 +150,15 @@ app.post('/contact', (req, res) => {
   }
 });
 
+app.get('/sitemap.xml', (req, res) => {
+  try {
+    const sitemapFile = path.resolve(__dirname, 'public', 'sitemap.xml');
+    res.sendFile(sitemapFile);
+  } catch {
+    return serverErrorResponse(res);
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
